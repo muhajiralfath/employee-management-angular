@@ -1,1 +1,44 @@
-<p>home works!</p>
+<main>
+  <div>
+    <mat-toolbar color="primary" class="flex justify-between">
+      <div class="flex h-full items-center justify-center">
+        <button type="button" mat-mini-fab color="primary" (click)="drawer.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <span class="mx-3">Show Menu</span>
+      </div>
+      <div>
+        <span class="text-center">Employee Management</span>
+      </div>
+      <div>
+        <button type="button"  mat-raised-button color="warn" routerLink="/login">
+          Log Out
+        </button>
+      </div>
+    </mat-toolbar>
+  </div>
+
+  <div>
+    <mat-drawer-container class="w-full h-screen" autosize>
+      <mat-drawer #drawer class="p-[20px]" mode="side">
+        <div class="flex flex-col gap-4">
+          <button type="button"  mat-raised-button color="primary" routerLink="add-form">
+            Add Employee
+          </button>
+          <button type="button"  mat-raised-button color="primary" routerLink="list" >
+            List of Employee
+          </button>
+          <button type="button"  mat-raised-button color="primary" routerLink="detail">
+            Detail Employee
+          </button>
+        </div>
+      </mat-drawer>
+      <mat-drawer-content>
+          <router-outlet></router-outlet>
+      </mat-drawer-content>
+    </mat-drawer-container>
+
+  </div>
+
+</main>
+

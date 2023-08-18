@@ -6,6 +6,10 @@ import { HomeComponent } from './home/home.component';
 import { DetailComponent } from './detail/detail.component';
 import { FormComponent } from './form/form.component';
 import { ListComponent } from './list/list.component';
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatButtonModule} from "@angular/material/button";
+import {MatSidenavModule} from "@angular/material/sidenav";
+import {MatIconModule} from "@angular/material/icon";
 
 
 @NgModule({
@@ -17,7 +21,11 @@ import { ListComponent } from './list/list.component';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule
   ]
 })
 export class PagesModule { }

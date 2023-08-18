@@ -1,6 +1,6 @@
 export interface Employee {
   'username': string,
-  'firsName': string,
+  'firstName': string,
   'lastName': string,
   'email': string,
   'birtDate': Date,

@@ -20,7 +20,8 @@ export class ListComponent {
     'basicSalary',
     'status',
     'group',
-    'description'
+    'description',
+    'action'
   ];
 
   dataSource!: MatTableDataSource<any>

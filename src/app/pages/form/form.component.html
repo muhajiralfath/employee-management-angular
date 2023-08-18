@@ -1,1 +1,76 @@
-<p>form works!</p>
+<div class="mt-14 border-2 w-3/5 m-auto py-6  border-gray-300 rounded-lg shadow-md p-6 ">
+  <h1 class="text-center text-blue-500 text-7xl font-sans ">Form</h1>
+  <div class="flex justify-center items-center">
+    <form class="w-[70%]">
+      <div class="pt-[10px]">
+        <div class="flex gap-[10px]">
+          <mat-form-field class="w-[100%]" appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput type="text" placeholder="Ex. username">
+          </mat-form-field>
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" placeholder="Ex. alfath@gmail.com">
+          </mat-form-field>
+        </div>
+        <div class="flex gap-[10px]">
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>First Name</mat-label>
+            <input matInput type="text" placeholder="Ex. Muhajir">
+          </mat-form-field>
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" placeholder="Ex. Alfath">
+          </mat-form-field>
+        </div>
+        <div class="flex gap-[10px]">
+          <mat-form-field appearance="fill">
+            <mat-label>Date of birth</mat-label>
+            <input matInput [matDatepicker]="picker">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Salary</mat-label>
+            <input matInput type="text" placeholder="Ex. 10.000.000">
+          </mat-form-field>
+        </div>
+        <div class="flex gap-[10px]">
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Group</mat-label>
+            <input type="text"
+                   placeholder="Pick one"
+                   aria-label="Number"
+                   matInput
+                   [formControl]="myControl"
+                   [matAutocomplete]="auto">
+            <mat-autocomplete #auto="matAutocomplete">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                {{option}}
+              </mat-option>
+            </mat-autocomplete>
+          </mat-form-field>
+          <mat-form-field class="w-full" appearance="fill">
+            <mat-label>Gender</mat-label>
+            <mat-select formControlName="education">
+              <mat-option *ngFor="let val of gender" [value]="val">{{val}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field class="w-full">
+            <mat-label>Description</mat-label>
+            <textarea matInput placeholder="Fullstack Programmer"></textarea>
+          </mat-form-field>
+        </div>
+
+      </div>
+      <div class="p-0 px-25 py-6 flex items-center gap-6">
+        <button class="flex-1" mat-raised-button color="warn" type="button" routerLink="/employee/list">cancel</button>
+        <button class="flex-1" mat-raised-button color="primary" type="submit">submit</button>
+      </div>
+    </form>
+  </div>
+</div>

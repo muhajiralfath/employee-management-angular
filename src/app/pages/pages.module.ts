@@ -10,6 +10,15 @@ import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatButtonModule} from "@angular/material/button";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatIconModule} from "@angular/material/icon";
+import { EditComponent } from './edit/edit.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import {MatInputModule} from "@angular/material/input";
+import {MatSelectModule} from "@angular/material/select";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatNativeDateModule} from "@angular/material/core";
+import {MatAutocompleteModule} from "@angular/material/autocomplete";
+import {ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -17,7 +26,8 @@ import {MatIconModule} from "@angular/material/icon";
     HomeComponent,
     DetailComponent,
     FormComponent,
-    ListComponent
+    ListComponent,
+    EditComponent
   ],
   imports: [
     CommonModule,
@@ -25,7 +35,15 @@ import {MatIconModule} from "@angular/material/icon";
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatInputModule,
+    MatSelectModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule { }

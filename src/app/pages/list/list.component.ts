@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import {MatDialog} from "@angular/material/dialog";
 import {EditComponent} from "../edit/edit.component";
+import {MatTableDataSource} from "@angular/material/table";
 
 @Component({
   selector: 'app-list',
@@ -8,6 +9,21 @@ import {EditComponent} from "../edit/edit.component";
   styleUrls: ['./list.component.css']
 })
 export class ListComponent {
+
+  displayedColumns: string[] = [
+    'id',
+    'username',
+    'firstName',
+    'lastName',
+    'email',
+    'birthDate',
+    'basicSalary',
+    'status',
+    'group',
+    'description'
+  ];
+
+  dataSource!: MatTableDataSource<any>
 
   constructor(private _dialog: MatDialog) {
   }

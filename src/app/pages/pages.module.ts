@@ -22,6 +22,10 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {MatTableModule} from "@angular/material/table";
 import {MatSortModule} from "@angular/material/sort";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {HttpClientModule} from "@angular/common/http";
+import {EmployeeService} from "../service/employee.service";
+import {CoreService} from "../core/core.service";
+import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
 
 
 @NgModule({
@@ -35,6 +39,7 @@ import {MatPaginatorModule} from "@angular/material/paginator";
   imports: [
     CommonModule,
     PagesRoutingModule,
+    HttpClientModule,
     MatToolbarModule,
     MatButtonModule,
     MatSidenavModule,
@@ -49,7 +54,10 @@ import {MatPaginatorModule} from "@angular/material/paginator";
     ReactiveFormsModule,
     MatTableModule,
     MatSortModule,
-    MatPaginatorModule
-  ]
+    MatPaginatorModule,
+    MatSnackBarModule
+  ],
+  providers: [EmployeeService, CoreService]
+
 })
 export class PagesModule { }

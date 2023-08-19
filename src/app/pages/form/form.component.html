@@ -1,39 +1,39 @@
 <div class="mt-14 border-2 w-3/5 m-auto py-6  border-gray-300 rounded-lg shadow-md p-6 ">
   <h1 class="text-center text-blue-500 text-7xl font-sans ">Form</h1>
   <div class="flex justify-center items-center">
-    <form class="w-[70%]">
+    <form class="w-[70%]" [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
       <div class="pt-[10px]">
         <div class="flex gap-[10px]">
           <mat-form-field class="w-[100%]" appearance="fill">
             <mat-label>Username</mat-label>
-            <input matInput type="text" placeholder="Ex. username">
+            <input matInput type="text" placeholder="Ex. username" formControlName="username">
           </mat-form-field>
           <mat-form-field class="w-full" appearance="fill">
             <mat-label>Email</mat-label>
-            <input matInput type="text" placeholder="Ex. alfath@gmail.com">
+            <input matInput type="text" placeholder="Ex. alfath@gmail.com" formControlName="email">
           </mat-form-field>
         </div>
         <div class="flex gap-[10px]">
           <mat-form-field class="w-full" appearance="fill">
             <mat-label>First Name</mat-label>
-            <input matInput type="text" placeholder="Ex. Muhajir">
+            <input matInput type="text" placeholder="Ex. Muhajir" formControlName="firstName">
           </mat-form-field>
           <mat-form-field class="w-full" appearance="fill">
             <mat-label>Last Name</mat-label>
-            <input matInput type="text" placeholder="Ex. Alfath">
+            <input matInput type="text" placeholder="Ex. Alfath" formControlName="lastName">
           </mat-form-field>
         </div>
         <div class="flex gap-[10px]">
           <mat-form-field appearance="fill">
             <mat-label>Date of birth</mat-label>
-            <input matInput [matDatepicker]="picker">
+            <input matInput [matDatepicker]="picker" formControlName="birthDate">
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
           <mat-form-field class="w-full" appearance="fill">
             <mat-label>Salary</mat-label>
-            <input matInput type="text" placeholder="Ex. 10.000.000">
+            <input matInput type="text" placeholder="Ex. 10.000.000" formControlName="basicSalary">
           </mat-form-field>
         </div>
         <div class="flex gap-[10px]">
@@ -43,6 +43,7 @@
                    placeholder="Pick one"
                    aria-label="Number"
                    matInput
+                   formControlName="group"
                    [formControl]="myControl"
                    [matAutocomplete]="auto">
             <mat-autocomplete #auto="matAutocomplete">
@@ -52,9 +53,9 @@
             </mat-autocomplete>
           </mat-form-field>
           <mat-form-field class="w-full" appearance="fill">
-            <mat-label>Gender</mat-label>
-            <mat-select formControlName="education">
-              <mat-option *ngFor="let val of gender" [value]="val">{{val}}
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status">
+              <mat-option *ngFor="let val of status" [value]="val">{{val}}
               </mat-option>
             </mat-select>
           </mat-form-field>
@@ -62,7 +63,7 @@
         <div>
           <mat-form-field class="w-full">
             <mat-label>Description</mat-label>
-            <textarea matInput placeholder="Fullstack Programmer"></textarea>
+            <textarea matInput placeholder="Fullstack Programmer" formControlName="description"></textarea>
           </mat-form-field>
         </div>
 

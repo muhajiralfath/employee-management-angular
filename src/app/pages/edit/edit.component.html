@@ -2,60 +2,63 @@
   <h1>Edit Employee</h1>
 </div>
 
-<form class="px-6 pb-8">
+<form class="px-6 pb-8" [formGroup]="empForm" (ngSubmit)="onFormSubmit()">
   <div mat-dialog-content class="pt-[10px]">
     <div class="flex gap-[10px]">
       <mat-form-field class="w-[100%]" appearance="fill">
         <mat-label>Username</mat-label>
-        <input matInput type="text" placeholder="Ex. username">
+        <input matInput type="text" placeholder="Ex. username" formControlName="username">
       </mat-form-field>
       <mat-form-field class="w-full" appearance="fill">
         <mat-label>Email</mat-label>
-        <input matInput type="text" placeholder="Ex. alfath@gmail.com">
+        <input matInput type="text" placeholder="Ex. alfath@gmail.com" formControlName="email">
       </mat-form-field>
     </div>
     <div class="flex gap-[10px]">
       <mat-form-field class="w-full" appearance="fill">
         <mat-label>First Name</mat-label>
-        <input matInput type="text" placeholder="Ex. Muhajir">
+        <input matInput type="text" placeholder="Ex. Muhajir" formControlName="firstName">
       </mat-form-field>
       <mat-form-field class="w-full" appearance="fill">
         <mat-label>Last Name</mat-label>
-        <input matInput type="text" placeholder="Ex. Alfath">
+        <input matInput type="text" placeholder="Ex. Alfath" formControlName="lastName">
       </mat-form-field>
     </div>
     <div class="flex gap-[10px]">
       <mat-form-field appearance="fill">
         <mat-label>Date of birth</mat-label>
-        <input matInput [matDatepicker]="picker">
+        <input matInput [matDatepicker]="picker" formControlName="birthDate">
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="empForm.get('birthDate')?.hasError('futureDate')" class="w-full">
+          Date Can't be less then now
+        </mat-error>
       </mat-form-field>
       <mat-form-field class="w-full" appearance="fill">
         <mat-label>Salary</mat-label>
-        <input matInput type="text" placeholder="Ex. 10.000.000">
+        <input matInput type="text" placeholder="Ex. 10.000.000" formControlName="basicSalary">
       </mat-form-field>
     </div>
     <div class="flex gap-[10px]">
       <mat-form-field class="w-full" appearance="fill">
         <mat-label>Group</mat-label>
         <input type="text"
-               placeholder="Pick one"
+               placeholder="Search group"
                aria-label="Number"
                matInput
-               [formControl]="myControl"
+               formControlName="group"
                [matAutocomplete]="auto">
         <mat-autocomplete #auto="matAutocomplete">
-          <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+          <mat-option *ngFor="let option of filteredOptions | async" [value]="option"  >
             {{option}}
           </mat-option>
         </mat-autocomplete>
       </mat-form-field>
       <mat-form-field class="w-full" appearance="fill">
-        <mat-label>Gender</mat-label>
-        <mat-select formControlName="education">
-          <mat-option *ngFor="let val of gender" [value]="val">{{val}}
+        <mat-label>Status</mat-label>
+        <mat-select formControlName="status">
+          <mat-option *ngFor="let val of status" [value]="val">{{val}}
           </mat-option>
         </mat-select>
       </mat-form-field>
@@ -63,7 +66,7 @@
     <div>
       <mat-form-field class="w-full" >
         <mat-label>Description</mat-label>
-        <textarea matInput placeholder="Fullstack Programmer"></textarea>
+        <textarea matInput placeholder="Fullstack Programmer" formControlName="description"></textarea>
       </mat-form-field>
     </div>
 

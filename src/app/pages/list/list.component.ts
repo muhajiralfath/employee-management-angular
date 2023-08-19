@@ -6,7 +6,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {EmployeeService} from "../../service/employee.service";
 import {CoreService} from "../../core/core.service";
-import {core} from "@angular/compiler";
+
 
 @Component({
   selector: 'app-list',
@@ -16,7 +16,6 @@ import {core} from "@angular/compiler";
 export class ListComponent implements OnInit{
 
   displayedColumns: string[] = [
-    'id',
     'username',
     'firstName',
     'lastName',
@@ -44,18 +43,21 @@ export class ListComponent implements OnInit{
   }
 
   ngOnInit():void {
-
+    this.getAllEmployee()
   }
 
-  openEditForm(): void{
-    const dialogRef = this.dialog.open(EditComponent);
+  openEditForm(data: any) {
+    const dialogRef = this.dialog.open(EditComponent, {
+      data,
+    });
+
     dialogRef.afterClosed().subscribe({
-      next: (v) => {
-        if (v){
-          this.getAllEmployee()
+      next: (val) => {
+        if (val) {
+          this.getAllEmployee();
         }
-      }
-    })
+      },
+    });
   }
 
   getAllEmployee():void {
@@ -86,4 +88,5 @@ export class ListComponent implements OnInit{
       error: console.log
     })
   }
+
 }

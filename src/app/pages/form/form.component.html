@@ -30,6 +30,9 @@
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
             <mat-datepicker #picker></mat-datepicker>
+            <mat-error *ngIf="empForm.get('birthDate')?.hasError('futureDate')" class="w-full">
+              Date Can't be less then now
+            </mat-error>
           </mat-form-field>
           <mat-form-field class="w-full" appearance="fill">
             <mat-label>Salary</mat-label>
@@ -40,14 +43,13 @@
           <mat-form-field class="w-full" appearance="fill">
             <mat-label>Group</mat-label>
             <input type="text"
-                   placeholder="Pick one"
+                   placeholder="Search group"
                    aria-label="Number"
                    matInput
                    formControlName="group"
-                   [formControl]="myControl"
                    [matAutocomplete]="auto">
             <mat-autocomplete #auto="matAutocomplete">
-              <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              <mat-option *ngFor="let option of filteredOptions | async" [value]="option"  >
                 {{option}}
               </mat-option>
             </mat-autocomplete>

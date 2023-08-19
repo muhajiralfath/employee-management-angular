@@ -1,28 +1,26 @@
-<div class="flex flex-col justify-center items-center h-screen bg-gray-500">
-  <mat-card class="min-h-[340px] min-w-[500px] text-center">
-    <mat-card-header class="mt-6 ">
-      <h1 class="text-6xl text-blue-500 w-full ">Login</h1>
-    </mat-card-header>
+<div class="flex flex-col justify-center items-center h-screen bg-gray-500 ">
+   <mat-card class="min-h-[340px] min-w-[500px] text-center border-gray-300 rounded-lg shadow-md p-6 border-2">
+     <mat-card-header class="mt-6 ">
+       <h1 class="text-6xl text-blue-500 w-full ">Login</h1>
+     </mat-card-header>
 
-    <mat-card-content class="">
-      <form class="flex flex-col justify-center items-center">
-        <mat-form-field class="w-3/4" appearance="fill">
-          <mat-label>User Name</mat-label>
-          <input matInput placeholder="Enter your name" name="username"
-                 [(ngModel)]="account.username">
-        </mat-form-field>
-        <mat-form-field class="w-3/4" appearance="fill">
-          <mat-label>Password</mat-label>
-          <input matInput placeholder="Enter your password" value="" name="password" type="password"
-                 [(ngModel)]="account.password">
-        </mat-form-field>
-      </form>
-    </mat-card-content>
+     <mat-card-content class="">
+       <form class="flex flex-col justify-center items-center">
+         <mat-form-field class="w-3/4" appearance="fill">
+           <mat-label>User Name</mat-label>
+           <input matInput placeholder="Enter your name" name="username"
+                  [(ngModel)]="account.username">
+         </mat-form-field>
+         <mat-form-field class="w-3/4" appearance="fill">
+           <mat-label>Password</mat-label>
+           <input matInput placeholder="Enter your password" value="" name="password" type="password"
+                  [(ngModel)]="account.password">
+         </mat-form-field>
+       </form>
+     </mat-card-content>
 
-    <mat-card-footer class="text-center">
-      <button mat-raised-button color="primary" class="w-1/4 mt-1" (click)="login()">Login</button>
-    </mat-card-footer>
-  </mat-card>
-
-
+     <mat-card-footer class="text-center">
+       <button mat-raised-button color="primary" class="w-1/4 mt-1" (click)="login()">Login</button>
+     </mat-card-footer>
+   </mat-card>
 </div>

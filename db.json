@@ -15,5 +15,31 @@
   ],
   "profile": {
     "name": "typicode"
-  }
+  },
+  "employees": [
+    {
+      "username": "alfath",
+      "firstName": "alfath",
+      "lastName": "Muhajir",
+      "email": "sasadam@gmail.com",
+      "birthDate": "2023-08-08T17:00:00.000Z",
+      "basicSalary": "222",
+      "status": "Single",
+      "group": "Operator",
+      "description": "qqqqqqqqqqqqqqqqqqqqqqqqqq",
+      "id": 6
+    },
+    {
+      "username": "dfsfsd",
+      "firstName": "sdfs",
+      "lastName": "fsdfs",
+      "email": "dfs@a.com",
+      "birthDate": "2023-07-31T17:00:00.000Z",
+      "basicSalary": "200",
+      "status": "Married",
+      "group": "IT",
+      "description": "wefw",
+      "id": 7
+    }
+  ]
 }

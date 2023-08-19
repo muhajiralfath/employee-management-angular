@@ -26,6 +26,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {EmployeeService} from "../service/employee.service";
 import {CoreService} from "../core/core.service";
 import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
+import {MatCardModule} from "@angular/material/card";
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatCardModule
   ],
   providers: [EmployeeService, CoreService]
 

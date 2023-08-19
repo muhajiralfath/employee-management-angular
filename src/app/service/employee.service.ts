@@ -17,7 +17,7 @@ export class EmployeeService {
     return this.http.put(`http://localhost:3000/employees/${id}`, data);
   }
 
-  getEmpById(id: string): Observable<any> {
+  getEmpById(id: number): Observable<any> {
     return this.http.get(`http://localhost:3000/employees/${id}`)
   }
 

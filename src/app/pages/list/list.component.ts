@@ -6,6 +6,7 @@ import {MatPaginator} from "@angular/material/paginator";
 import {MatSort} from "@angular/material/sort";
 import {EmployeeService} from "../../service/employee.service";
 import {CoreService} from "../../core/core.service";
+import {Router} from "@angular/router";
 
 
 @Component({
@@ -38,7 +39,8 @@ export class ListComponent implements OnInit{
   constructor(
     private dialog: MatDialog,
     private empService: EmployeeService,
-    private coreService: CoreService
+    private coreService: CoreService,
+    private router: Router
   ) {
   }
 
@@ -58,6 +60,10 @@ export class ListComponent implements OnInit{
         }
       },
     });
+  }
+
+  detail(id: number):void {
+    this.router.navigate(["/employee", id])
   }
 
   getAllEmployee():void {

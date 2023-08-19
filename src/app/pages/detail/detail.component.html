@@ -1,1 +1,23 @@
-<p>detail works!</p>
+<div class="flex flex-col justify-center items-center text-center mt-10">
+
+    <mat-card class="w-1/4 mx-auto">
+      <mat-card-header class="flex flex-col justify-center mb-4">
+        <mat-card-title class="mb-3">{{ employee.firstName }} {{ employee.lastName }}</mat-card-title>
+        <div class="mx-auto mt-4">
+          <img src="assets/images/person.jpg" alt="{{ employee.username }} " class="rounded-full w-32 h-32">
+        </div>
+      </mat-card-header>
+      <mat-card-content>
+        <p><strong>Email:</strong> {{ employee.email }}</p>
+        <p><strong>Birth Date:</strong> {{ employee.birthDate | date }}</p>
+        <p><strong>Basic Salary:</strong>Rp. {{ employee.basicSalary | number:'1.0-0' }},00</p>
+        <p><strong>Status:</strong> {{ employee.status }}</p>
+        <p><strong>Group:</strong> {{ employee.group }}</p>
+        <p><strong>Description:</strong> {{ employee.description }}</p>
+      </mat-card-content>
+    </mat-card>
+
+  <div class="mt-4">
+    <button mat-raised-button color="primary" routerLink="/employee/list">Back To List</button>
+  </div>
+</div>

@@ -25,3 +25,15 @@ npm start
 ```command
 json-server --watch db.json
 ```
+
+### Login in website with this account
+
+username
+```
+admin
+```
+
+password
+```
+admin
+```

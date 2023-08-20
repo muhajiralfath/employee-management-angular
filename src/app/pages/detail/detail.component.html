@@ -8,6 +8,7 @@
         </div>
       </mat-card-header>
       <mat-card-content>
+        <p><strong>Username:</strong> {{ employee.username }}</p>
         <p><strong>Email:</strong> {{ employee.email }}</p>
         <p><strong>Birth Date:</strong> {{ employee.birthDate | date }}</p>
         <p><strong>Basic Salary:</strong>Rp. {{ employee.basicSalary | number:'1.0-0' }},00</p>

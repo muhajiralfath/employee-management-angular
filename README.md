@@ -1,32 +1,34 @@
 # Management Employee 
 
-A website for employee management built using Angular, Angular Material, Tailwind CSS, and also JSON Server.
+Website untuk manajemen data karyawan. Dibuat menggunakan angular, angular material, tailwind css, dan json-server. website ini menerapkan validasi pada input form, dan juga beberapa fitur pada tabel list seperti sorting dan juga searching.
 
-## After finishing cloning this project, proceed to perform the following installation steps:
+## Clone project lalu lakukan beberapa langkah berikut untuk menjalankan web:
 
 ### Install dependency
 
 ```node
 npm install
 ```
-### Start server & open browser in http://localhost:4200/
+### Start server dengan manjalankan command berikut pada terminal
 
 ```command
 ng serve
 ```
-#### or
+#### atau
 
 ```commdand
 npm start
 ```
+setelah server berhasil dijalankan, buka browser lalu masukkan link http://localhost:4200/
 
-### Open other terminal to start Json-Server
+
+### buka terminal lain tanpa menutup terminal sebelumnya untuk menjalankan Json-Server
 
 ```command
 json-server --watch db.json
 ```
 
-### Login in website with this account
+### Login ke dalam website menggunakan akun berikut : 
 
 username
 ```
@@ -37,3 +39,4 @@ password
 ```
 admin
 ```
+
